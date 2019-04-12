@@ -16,3 +16,11 @@ YZX_SMS_PARAMS = {
     "param": None,
     "mobile": None,
 }
+
+# 需要填写你的 Access Key 和 Secret Key
+QINIU_ACCESS_KEY = 'Access_Key'
+QINIU_SECRET_KEY = 'Secret_Key'
+# 要上传的空间
+QINIU_BUCKET_NAME = 'swipe'
+
+QINIU_BUCKET_URL = 'http://'

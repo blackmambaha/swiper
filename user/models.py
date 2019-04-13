@@ -33,7 +33,8 @@ class User(models.Model,ModelMixin):
             profile, _ = Profile.objects.get_or_create(id=self.id)
             self._profile = profile
 
-        return self.profile
+        # self._profile是有下划线的
+        return self._profile
 
 
 class Profile(models.Model,ModelMixin):

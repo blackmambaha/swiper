@@ -7,7 +7,6 @@ from django.core.cache import cache
 from common import keys
 from user.models import User, Profile
 from user.forms import ProfileForm
-from django import forms
 from user import logics
 
 
@@ -47,9 +46,7 @@ def sumbit_vcode(request):
 
 def get_profile(request):
     """获取个人资料"""
-    uid = request.session.get('uid')
-    user = User.objects.get(id=uid)
-    profile = user.profile
+    profile = request.user.profile
 
     return render_json(profile.to_string())
 
@@ -80,8 +77,7 @@ def upload_icon(request):
         return render_json('request method error', errors.REQUEST_ERROR)
 
     icon = request.FILES.get('icon')
-    uid = request.POST.get('uid')
-    user = User.objects.get(id=uid)
+    user = request.user
 
     logics.upload_icon.delay(user,icon)
 

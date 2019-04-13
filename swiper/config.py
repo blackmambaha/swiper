@@ -24,3 +24,6 @@ QINIU_SECRET_KEY = 'Secret_Key'
 QINIU_BUCKET_NAME = 'swipe'
 
 QINIU_BUCKET_URL = 'http://'
+
+# 反悔次数
+REGRET_TIMES = 3
